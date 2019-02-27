@@ -1,5 +1,7 @@
 # Issue with Android's `com.android.test` plugin
 
+> :point_right: [Corresponding Question on Stack Overflow](https://stackoverflow.com/q/54915891/4744332)
+
 With the `com.android.test` [plugin](https://developer.android.com/studio/test#use_separate_test_modules_for_instrumented_tests), instrumented tests can reside in a separate Gradle module, isolated from the rest of the code.
 Using this plugin in combination with AndroidX AppCompat, however, causes the `IllegalStateException` below upon launching an Activity.
 

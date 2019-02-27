@@ -1,0 +1,41 @@
+apply plugin: 'com.android.test'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+    annotation('biz.laenger.android.foo.app.AllOpen')
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
+        testApplicationId 'biz.laenger.android.foo.app.test'
+        testInstrumentationRunner 'biz.laenger.android.foo.app.FooTestApplicationRunner'
+        testHandleProfiling true
+        testFunctionalTest true
+    }
+
+    targetProjectPath ':app'
+}
+
+dependencies {
+    compileOnly project(':features:feature_one')
+    compileOnly project(':features:feature_two')
+
+    implementation 'androidx.test:core:1.1.0'
+    implementation 'androidx.test:rules:1.1.1'
+    implementation 'androidx.test:runner:1.1.1'
+    implementation 'androidx.test.ext:junit:1.1.0'
+    implementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'androidx.test.espresso:espresso-remote:3.1.1'
+    implementation 'androidx.test.espresso:espresso-contrib:3.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-test:${kotlinVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
+}

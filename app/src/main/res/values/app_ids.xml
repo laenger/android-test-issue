@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <item name="feature_one_nav_graph" type="id" />
+    <item name="feature_two_nav_graph" type="id" />
+
+    <item name="navigateToFeatureOne" type="id" />
+    <item name="navigateToFeatureTwo" type="id" />
+</resources>

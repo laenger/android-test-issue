@@ -1,0 +1,7 @@
+include ':app'
+include ':app-tests'
+include ':features:one'
+include ':features:two'
+
+project(':features:one').name = 'feature_one'
+project(':features:two').name = 'feature_two'

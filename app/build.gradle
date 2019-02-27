@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+    annotation('biz.laenger.android.foo.app.AllOpen')
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
+        applicationId 'biz.laenger.android.foo.app'
+        versionCode 1
+        versionName '0.0.1'
+        multiDexEnabled true
+
+        testApplicationId 'biz.laenger.android.foo.app.test'
+        testInstrumentationRunner 'biz.laenger.android.foo.app.FooTestApplicationRunner'
+        testHandleProfiling true
+        testFunctionalTest true
+    }
+
+    buildTypes {
+        release {
+        }
+        debug {
+        }
+    }
+
+    dynamicFeatures = [
+            ':features:feature_one',
+            ':features:feature_two'
+    ]
+}
+
+dependencies {
+    api 'org.jetbrains.kotlinx:kotlinx-collections-immutable:0.1'
+    api 'com.jakewharton.timber:timber-android:5.0.0-SNAPSHOT'
+
+    api "android.arch.navigation:navigation-fragment-ktx:${archNavigationVersion}"
+    api "android.arch.navigation:navigation-ui-ktx:${archNavigationVersion}"
+
+    api 'com.google.android.play:core:1.3.7'
+    api 'com.google.android.material:material:1.0.0'
+
+    api 'androidx.annotation:annotation:1.0.2'
+    api 'androidx.appcompat:appcompat:1.0.2'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+
+    androidTestImplementation 'androidx.test:core:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.1'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-remote:3.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.1'
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-test:${kotlinVersion}"
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
+}

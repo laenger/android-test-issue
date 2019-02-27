@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">foo</string>
+
+    <string name="feature_title_one">Module One</string>
+    <string name="feature_title_two">Module Two</string>
+
+    <string name="home_item_one">One</string>
+    <string name="home_item_two">Two</string>
+</resources>

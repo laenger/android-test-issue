@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar" />
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppBarStyle" parent="Widget.Design.AppBarLayout">
+        <item name="android:theme">@style/AppBarTheme</item>
+    </style>
+
+    <style name="AppBarTheme" parent="AppTheme">
+        <item name="android:colorControlNormal">@color/grey1</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+</resources>
